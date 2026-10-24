@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUME | Saim Ali Abbasi — Science, Philosophy &amp; Poetry</title>
+  <meta name="description" content="YUME (夢) — The personal blog and notebook of Saim Ali Abbasi. Exploring physics, mathematics, quantum computing, engineering, philosophy, and poetry.">
+  <meta name="author" content="Saim Ali Abbasi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://saim-ali-abbasi.github.io/yume/">
+
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saim-ali-abbasi.github.io/yume/">
+  <meta property="og:title" content="YUME (夢) — Saim Ali Abbasi">
+  <meta property="og:description" content="I dream in equations. I question in poetry. I build somewhere between the two. A personal notebook of science, philosophy, and poetry.">
+  <meta property="og:image" content="https://saim-ali-abbasi.github.io/yume/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YUME (夢) — Saim Ali Abbasi">
+  <meta name="twitter:description" content="Where dreams meet the hardest problems. Essays and poetry by Saim Ali Abbasi.">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Favicon: Red Kanji 夢 Seal in SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23FFFFFF'/><circle cx='16' cy='16' r='13' stroke='%23E02B2B' stroke-width='1.5' fill='none'/><text x='16' y='21.5' font-size='15' font-family='sans-serif' font-weight='bold' fill='%23E02B2B' text-anchor='middle'>夢</text></svg>">
+
+  <!-- Typography: Space Grotesk, Inter, Cormorant Garamond, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Cursor Glow (Desktop Fine Pointers) -->
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- STICKY NAVIGATION BAR -->
+  <header id="site-header" class="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-link" aria-label="YUME Homepage">
+        <span class="brand-seal" id="brand-seal-btn" title="Inspect Dream state (Easter Egg)" role="button" tabindex="0">夢</span>
+        <span class="brand-text-group">
+          <span class="brand-name">YUME</span>
+          <span class="brand-sub">Saim Ali Abbasi</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav id="site-nav" class="site-nav" aria-label="Primary Navigation">
+        <ul class="nav-list" id="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active" data-nav="hero">Home</a></li>
+          <li class="nav-item"><a href="#journal" class="nav-link" data-nav="journal">Journal</a></li>
+          <li class="nav-item"><a href="#verses" class="nav-link" data-nav="verses">Dream Verses</a></li>
+          <li class="nav-item"><a href="#philosophy" class="nav-link" data-nav="philosophy">Philosophy</a></li>
+          <li class="nav-item"><a href="#notebook" class="nav-link" data-nav="notebook">The Inventor's Notebook</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-nav="about">About</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions: Search Trigger, Theme Toggle, Mobile Menu -->
+      <div class="nav-actions">
+        <button type="button" id="quick-search-btn" class="nav-icon-btn" aria-label="Search articles" title="Search articles">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Toggle theme" title="Switch between Light and Dark mode">
+          <span class="theme-icon sun-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </span>
+          <span class="theme-icon moon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+
+        <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="main-content">
+
+    <!-- NOSCRIPT FALLBACK NOTICE -->
+    <noscript>
+      <div class="noscript-banner">
+        <p><strong>Note:</strong> JavaScript is currently disabled. YUME's articles, poetry, and philosophy are fully readable below. Interactive search, dynamic category filtering, and the wave visualization require JavaScript.</p>
+      </div>
+    </noscript>
+
+    <!-- SECTION 1: HERO — A DREAM IN PROGRESS -->
+    <section id="hero" class="hero-section" aria-label="Introduction">
+      <div class="hero-canvas-container" aria-hidden="true">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      </div>
+      <div class="hero-pattern-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner-container">
+        <!-- Subtle Arc Reactor / Web Motif -->
+        <div class="hero-reactor-emblem" aria-hidden="true">
+          <div class="reactor-outer-ring"></div>
+          <div class="reactor-spokes"></div>
+          <div class="reactor-center-core">
+            <span class="reactor-kanji">夢</span>
+          </div>
+        </div>
+
+        <div class="hero-titles">
+          <div class="hero-brand-line">
+            <h1 class="hero-wordmark">YUME <span class="hero-kanji-sub">夢</span></h1>
+          </div>
+          <div class="hero-author-title">Saim Ali Abbasi</div>
+          <p class="hero-tagline">“I dream in equations. I question in poetry. I build somewhere between the two.”</p>
+        </div>
+
+        <p class="hero-lead">
+          Welcome to my corner of the universe — an evolving personal notebook exploring physics, engineering, quantum computing, philosophy, and the strange beauty of being alive.
+        </p>
+
+        <!-- Dynamic Typing Subtitle -->
+        <div class="hero-typing-box">
+          <span class="sr-only">Exploring as: Engineering student, Scientific explorer, Quantum computing enthusiast, Poet, Philosopher, Builder of ideas.</span>
+          <span class="typing-label">CURRENTLY EXPLORING AS //</span>
+          <span class="typing-target" id="typing-text" aria-hidden="true">Engineering student.</span>
+          <span class="typing-cursor" aria-hidden="true"></span>
+        </div>
+
+        <!-- Call-to-action Buttons -->
+        <div class="hero-cta-group">
+          <a href="#journal" class="btn btn-primary">
+            <span class="btn-text">EXPLORE MY JOURNAL</span>
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+          <a href="#verses" class="btn btn-secondary">
+            <span class="btn-text">ENTER DREAM VERSES</span>
+          </a>
+        </div>
+
+        <!-- Currently Thinking About Status -->
+        <div class="hero-thinking-status">
+          <span class="status-pulse-dot"></span>
+          <span class="status-prefix">CURRENTLY THINKING ABOUT:</span>
+          <span class="status-text" id="hero-thinking-text">Non-equilibrium thermodynamics in biological networks &amp; topological quantum states</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <a href="#journal" class="scroll-arrow-link" aria-label="Scroll to Journal">
+          <span class="scroll-label">DISPATCHES</span>
+          <span class="scroll-chevron">&darr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FEATURED WRITING & THE JOURNAL (THE HEART OF THE WEBSITE) -->
+    <section id="journal" class="section journal-section" aria-labelledby="journal-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> YUME JOURNAL // EDITORIAL DISPATCHES</div>
+          <h2 id="journal-heading" class="section-title">THE JOURNAL</h2>
+          <p class="section-lead">
+            Where questions become words. Long-form essays, mathematical inquiries, field notes, and honest reflections on science, technology, and existence.
+          </p>
+        </div>
+
+        <!-- FEATURED ARTICLE SHOWCASE -->
+        <div class="featured-article-hero" id="featured-article-container">
+          <!-- Populated dynamically from SITE_DATA -->
+        </div>
+
+        <!-- CONTROLS BAR: CATEGORIES, SEARCH, SORT -->
+        <div class="journal-controls-wrapper">
+          <!-- Category Filter Pills -->
+          <div class="category-filter-bar" role="toolbar" aria-label="Article categories">
+            <span class="filter-label">CATEGORIES:</span>
+            <div class="category-buttons" id="category-filters">
+              <!-- Rendered dynamically from SITE_DATA.categories -->
+            </div>
+          </div>
+
+          <!-- Search & Sort Controls -->
+          <div class="search-sort-bar">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="search" id="journal-search-input" class="search-input" placeholder="Search essays, keywords, physics, poetry..." aria-label="Search articles">
+              <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search query" hidden>&times;</button>
+            </div>
+
+            <div class="sort-select-wrapper">
+              <label for="journal-sort-select" class="sort-label">SORT:</label>
+              <select id="journal-sort-select" class="sort-select" aria-label="Sort articles">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="featured">Featured First</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Status / Filter Feedback -->
+        <div id="journal-results-count" class="results-feedback" aria-live="polite"></div>
+
+        <!-- ARTICLES GRID -->
+        <div class="articles-grid" id="articles-grid" aria-live="polite">
+          <!-- Populated dynamically from SITE_DATA.articles -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DREAM VERSES — POETRY AND THE QUIET SELF -->
+    <section id="verses" class="section verses-section" aria-labelledby="verses-heading">
+      <div class="section-container">
+        <div class="section-header verses-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> CONTEMPLATION // LITERARY NOTEBOOK</div>
+          <h2 id="verses-heading" class="section-title verses-title">DREAM VERSES</h2>
+          <p class="verses-axiom">“Some questions ask for proof. Others ask for words.”</p>
+          <p class="verses-sub">
+            The quiet side of the machine. Verses written late at night exploring consciousness, grief, uncertainty, and the human observer who stands beneath the stars.
+          </p>
+        </div>
+
+        <!-- Poetry Grid -->
+        <div class="poems-grid" id="poems-grid">
+          <!-- Populated dynamically from SITE_DATA.poems -->
+        </div>
+
+        <!-- Poetry Collection Link Banner -->
+        <div class="poetry-banner">
+          <div class="poetry-banner-text">
+            <span class="banner-badge">MANUSCRIPT IN PROGRESS</span>
+            <h3 class="banner-title">The Architecture of a Dream</h3>
+            <p class="banner-p">A forthcoming collection of reflections and poems written between equations and quiet hours.</p>
+          </div>
+          <div class="poetry-banner-action">
+            <a href="#contact" class="btn btn-secondary">Inquire About Manuscript &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PHILOSOPHY — BETWEEN SCIENCE AND EXISTENCE -->
+    <section id="philosophy" class="section philosophy-section" aria-labelledby="philosophy-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> AXIOMS // EPISTEMOLOGY</div>
+          <h2 id="philosophy-heading" class="section-title">PHILOSOPHY</h2>
+          <p class="section-lead">Between science and existence. Axioms guiding my questions, my engineering responsibilities, and my worldview.</p>
+        </div>
+
+        <!-- Interactive Philosophy Quotes Deck -->
+        <div class="philosophy-card-container">
+          <div class="philosophy-deck-card" id="philosophy-deck-card">
+            <div class="deck-meta">
+              <span class="deck-tag" id="deck-quote-num">AXIOM 01 / 05</span>
+              <span class="deck-theme-tag" id="deck-quote-theme">Responsibility &amp; Knowledge</span>
+            </div>
+
+            <blockquote class="deck-quote-body" id="deck-quote-body">
+              “Tony Stark reminds me of the ambition to build what seems impossible. Peter Parker reminds me that what we build matters less if we forget the people it is meant to help.”
+            </blockquote>
+
+            <div class="deck-footer">
+              <span class="deck-author-line">— Saim Ali Abbasi, Notebook Axiom</span>
+              <div class="deck-controls">
+                <button type="button" id="quote-prev-btn" class="deck-nav-btn" aria-label="Previous quote">&larr; Prev</button>
+                <div class="deck-dots" id="quote-dots"></div>
+                <button type="button" id="quote-next-btn" class="deck-nav-btn" aria-label="Next quote">Next &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: THE INVENTOR'S NOTEBOOK — ENGINEERING MEETS IMAGINATION -->
+    <section id="notebook" class="section notebook-section" aria-labelledby="notebook-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> EXPERIMENTS // INVENTOR'S WORKBENCH</div>
+          <h2 id="notebook-heading" class="section-title">THE INVENTOR'S NOTEBOOK</h2>
+          <p class="section-lead">
+            Engineering meets imagination. A living log of scientific experiments, research ideas, hardware acceleration prototypes, and physical models under investigation.
+          </p>
+        </div>
+
+        <!-- Notebook Projects Grid -->
+        <div class="notebook-grid" id="notebook-grid">
+          <!-- Populated from SITE_DATA.inventorNotebook -->
+        </div>
+
+        <!-- Interactive Scientific Corner: The Wave Laboratory -->
+        <div class="wave-laboratory-card" id="wave-lab-section">
+          <div class="wave-card-header">
+            <div class="wave-id-badge"><span class="badge-dot"></span> INTERACTIVE INSTRUMENT // THE WAVE LABORATORY</div>
+            <h3 class="wave-card-title">Harmonic Superposition &amp; Interference</h3>
+            <p class="wave-card-desc">
+              Adjust frequency, amplitude, and phase in real time to observe constructive and destructive wave phenomena: $y(x,t) = A \sin(kx - \omega t + \phi)$.
+            </p>
+          </div>
+
+          <div class="wave-canvas-viewport">
+            <canvas id="wave-canvas" width="700" height="280" class="wave-canvas" aria-label="Interactive wave simulation"></canvas>
+            <div class="wave-canvas-telemetry">
+              <span>&Delta;&Phi;: <strong id="wave-phase-val">0.00 rad</strong></span>
+              <span>STATE: <strong id="wave-state-val" class="text-red">In Phase (Constructive)</strong></span>
+            </div>
+          </div>
+
+          <div class="wave-controls-grid">
+            <div class="wave-ctrl-col">
+              <label for="wave-freq-slider" class="wave-label">Frequency (Hz): <span id="wave-freq-num">1.0</span></label>
+              <input type="range" id="wave-freq-slider" min="0.5" max="3.0" step="0.1" value="1.0" class="range-slider">
+            </div>
+            <div class="wave-ctrl-col">
+              <label for="wave-amp-slider" class="wave-label">Amplitude: <span id="wave-amp-num">1.0</span></label>
+              <input type="range" id="wave-amp-slider" min="0.2" max="1.5" step="0.1" value="1.0" class="range-slider">
+            </div>
+            <div class="wave-ctrl-col">
+              <label for="wave-phase-slider" class="wave-label">Phase Shift &phi; (rad): <span id="wave-phase-num">0.00</span></label>
+              <input type="range" id="wave-phase-slider" min="0" max="6.28" step="0.1" value="0" class="range-slider">
+            </div>
+            <div class="wave-ctrl-actions">
+              <button type="button" id="wave-toggle-btn" class="btn btn-secondary btn-sm">Pause Wave</button>
+              <button type="button" id="wave-reset-btn" class="btn btn-secondary btn-sm">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ABOUT SAIM ALI ABBASI -->
+    <section id="about" class="section about-section" aria-labelledby="about-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> PROFILE // THE MIND BEHIND THE WORDS</div>
+          <h2 id="about-heading" class="section-title">ABOUT SAIM ALI ABBASI</h2>
+        </div>
+
+        <div class="about-layout-grid">
+          <div class="about-photo-column">
+            <div class="profile-avatar-frame">
+              <!-- Profile Photo / SVG Avatar -->
+              <svg viewBox="0 0 240 240" class="avatar-svg" aria-label="Profile photo of Saim Ali Abbasi">
+                <circle cx="120" cy="120" r="110" fill="var(--color-surface-2)" stroke="var(--color-border-medium)" stroke-width="2"/>
+                <circle cx="120" cy="120" r="102" fill="none" stroke="var(--color-reactor-red)" stroke-width="1.5" stroke-dasharray="6 3"/>
+                <circle cx="120" cy="95" r="38" fill="var(--color-surface-card)" stroke="var(--color-steel)" stroke-width="1.5"/>
+                <path d="M60,195 C60,145 180,145 180,195" fill="var(--color-surface-card)" stroke="var(--color-steel)" stroke-width="1.5"/>
+                <circle cx="120" cy="120" r="118" fill="none" stroke="var(--color-steel-light)" stroke-width="1"/>
+              </svg>
+              <span class="avatar-caption">PORTRAIT // SAIM ALI ABBASI</span>
+            </div>
+
+            <div class="author-quick-badges">
+              <span class="badge">Saim Ali Abbasi</span>
+              <span class="badge">Student &amp; Researcher</span>
+              <span class="badge">Poet &amp; Builder</span>
+            </div>
+          </div>
+
+          <div class="about-text-column">
+            <div class="about-biography">
+              <p class="bio-paragraph lead-p">
+                I am <strong>Saim Ali Abbasi</strong>. I am drawn to the places where science meets uncertainty, where mathematics gives shape to invisible ideas, and where engineering turns imagination into something real.
+              </p>
+              <p class="bio-paragraph">
+                I write because some questions refuse to stay inside equations. I explore because the unknown still has something to teach me. And I build because I believe that an idea becomes more meaningful when it can make a difference beyond its creator.
+              </p>
+              <p class="bio-paragraph">
+                YUME is my growing collection of discoveries, unfinished thoughts, poetry, experiments, and questions I have not yet learned to answer.
+              </p>
+            </div>
+
+            <!-- Current Areas of Focus & Research -->
+            <div class="about-interests-box">
+              <h3 class="interests-heading">AREAS OF FOCUS &amp; CURIOSITY</h3>
+              <div class="interests-tags" id="about-interests-list">
+                <!-- Populated dynamically from SITE_DATA.author.interests -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-meta-tag"><span class="meta-dot"></span> COMMUNION // REACH OUT</div>
+          <h2 id="contact-heading" class="section-title">HAVE A QUESTION WORTH EXPLORING?</h2>
+          <p class="section-lead">
+            “I welcome thoughtful conversations about science, engineering, philosophy, writing, and ideas that might become something meaningful.”
+          </p>
+        </div>
+
+        <div class="contact-grid-layout">
+          <!-- Direct Channels -->
+          <div class="contact-channels-card">
+            <h3 class="card-heading">DIRECT TELEMETRY</h3>
+            <p class="card-p">
+              Whether you are working on an interesting scientific problem, have reflections on an essay, or want to discuss poetry — my inbox is open.
+            </p>
+
+            <ul class="channels-list">
+              <li class="channel-row">
+                <span class="ch-label">EMAIL:</span>
+                <a href="mailto:contact@saimaliabbasi.me" class="ch-link" id="contact-email">contact@saimaliabbasi.me</a>
+              </li>
+              <li class="channel-row">
+                <span class="ch-label">GITHUB:</span>
+                <a href="https://github.com/saimaliabbasi" target="_blank" rel="noopener noreferrer" class="ch-link" id="contact-github">github.com/saimaliabbasi</a>
+              </li>
+              <li class="channel-row">
+                <span class="ch-label">LINKEDIN:</span>
+                <a href="https://linkedin.com/in/saimaliabbasi" target="_blank" rel="noopener noreferrer" class="ch-link" id="contact-linkedin">linkedin.com/in/saimaliabbasi</a>
+              </li>
+              <li class="channel-row">
+                <span class="ch-label">X / TWITTER:</span>
+                <a href="https://x.com/saimaliabbasi" target="_blank" rel="noopener noreferrer" class="ch-link" id="contact-x">x.com/saimaliabbasi</a>
+              </li>
+              <li class="channel-row">
+                <span class="ch-label">SCHOLAR:</span>
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="ch-link" id="contact-scholar">Google Scholar Profile</a>
+              </li>
+            </ul>
+
+            <div class="channel-note">
+              <span class="note-dot">&bull;</span>
+              <span>Available for research collaborations, engineering discussions, and academic inquiries.</span>
+            </div>
+          </div>
+
+          <!-- Contact Form (Static Mailto Protocol) -->
+          <div class="contact-form-card">
+            <h3 class="card-heading">DISPATCH A NOTE</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="form-name" class="form-label">YOUR NAME <span class="req">*</span></label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Marie Curie" required>
+                <span class="form-err" id="name-err"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">YOUR EMAIL <span class="req">*</span></label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. marie@radium.institute" required>
+                <span class="form-err" id="email-err"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">SUBJECT <span class="req">*</span></label>
+                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. On Wave Superposition &amp; Responsibility" required>
+                <span class="form-err" id="subject-err"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">MESSAGE <span class="req">*</span></label>
+                <textarea id="form-message" name="message" rows="4" class="form-input form-textarea" placeholder="Share your thought, inquiry, or question..." required></textarea>
+                <span class="form-err" id="message-err"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">TRANSMIT NOTE</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+
+              <div id="form-feedback" class="form-feedback-box" hidden aria-live="polite"></div>
+
+              <p class="form-footnote">
+                <small><strong>Static Architecture Notice:</strong> Running securely on GitHub Pages without server database storage. Submitting opens your email client prefilled with your note.</small>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <span class="footer-seal" aria-hidden="true">夢</span>
+          <span class="footer-brand-title">YUME (夢)</span>
+        </div>
+        <p class="footer-author-tag">Saim Ali Abbasi</p>
+        <p class="footer-quote">“Built from questions. Guided by curiosity. Written between equations.”</p>
+        <p class="footer-closing"><strong>Every theorem started as a dream.</strong></p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-heading">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#verses">Dream Verses</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#notebook">The Inventor's Notebook</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-meta-col">
+        <h4 class="footer-heading">TECHNICAL &amp; ARCHIVAL</h4>
+        <p class="footer-meta-p">&copy; <span id="footer-year">2026</span> Saim Ali Abbasi. All rights reserved.</p>
+        <p class="footer-meta-sub">Crafted with semantic HTML5, modern CSS3, and vanilla JavaScript. Optimized for free hosting on GitHub Pages.</p>
+        <a href="#hero" class="back-to-top-btn" id="back-to-top">
+          <span>&uarr;</span> BACK TO TOP
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FULL ARTICLE READING PANEL (Accessible Modal) -->
+  <div id="article-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-article-title" hidden>
+    <div class="reading-progress-track">
+      <div class="reading-progress-bar" id="article-reading-progress"></div>
+    </div>
+    <div class="modal-card article-modal-card">
+      <div class="modal-card-header">
+        <div class="modal-meta-crumbs">
+          <span class="modal-category-tag" id="modal-article-cat">Category</span>
+          <span class="meta-separator">&bull;</span>
+          <span class="modal-date-tag" id="modal-article-date">Date</span>
+          <span class="meta-separator">&bull;</span>
+          <span class="modal-readtime-tag" id="modal-article-time">5 min read</span>
+        </div>
+        <div class="modal-header-actions">
+          <button type="button" id="copy-article-link-btn" class="modal-tool-btn" title="Copy article reference link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            <span class="btn-tip-text" id="copy-link-tip">Copy link</span>
+          </button>
+          <button type="button" id="close-article-modal" class="modal-close-btn" aria-label="Close article reading view">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body-scroll" id="article-scroll-pane">
+        <h2 id="modal-article-title" class="article-headline">Article Title</h2>
+        <p class="article-subtitle-lead" id="modal-article-subtitle">Article Subtitle / Excerpt</p>
+        <div class="article-author-byline">
+          <span>Written by <strong>Saim Ali Abbasi</strong></span>
+          <span id="modal-updated-tag" class="updated-notice" hidden></span>
+        </div>
+
+        <div class="article-rendered-content" id="modal-article-content">
+          <!-- Safe dynamic content inserted here -->
+        </div>
+
+        <!-- Previous & Next Article Navigation -->
+        <div class="article-prev-next-nav">
+          <button type="button" id="article-prev-btn" class="prev-next-btn">
+            <span class="pn-dir">&larr; Previous Dispatch</span>
+            <span class="pn-title" id="prev-article-name">Previous Title</span>
+          </button>
+          <button type="button" id="article-next-btn" class="prev-next-btn">
+            <span class="pn-dir">Next Dispatch &rarr;</span>
+            <span class="pn-title" id="next-article-name">Next Title</span>
+          </button>
+        </div>
+
+        <!-- Related Articles Section -->
+        <div class="related-articles-section">
+          <h3 class="related-heading">RELATED DISPATCHES</h3>
+          <div class="related-grid" id="modal-related-grid"></div>
+        </div>
+      </div>
+
+      <div class="modal-card-footer">
+        <button type="button" class="btn btn-secondary" id="modal-return-btn">&larr; Return to Journal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POEM READING PANEL (Accessible Modal) -->
+  <div id="poem-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-poem-title" hidden>
+    <div class="modal-card poem-modal-card">
+      <div class="modal-card-header">
+        <div class="modal-meta-crumbs">
+          <span class="poem-meta-label">DREAM VERSES</span>
+          <span class="meta-separator">&bull;</span>
+          <span class="modal-date-tag" id="modal-poem-date">Date</span>
+          <span class="meta-separator">&bull;</span>
+          <span class="modal-theme-tag" id="modal-poem-theme">Theme</span>
+        </div>
+        <button type="button" id="close-poem-modal" class="modal-close-btn" aria-label="Close poem reading view">&times;</button>
+      </div>
+
+      <div class="modal-body-scroll poem-scroll-body">
+        <h2 id="modal-poem-title" class="poem-headline">Poem Title</h2>
+        <div class="poem-body-text" id="modal-poem-body">
+          <!-- Poem verses rendered here -->
+        </div>
+      </div>
+
+      <div class="modal-card-footer">
+        <button type="button" class="btn btn-secondary" id="modal-close-poem-bottom">Close Poem</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL OVERLAY -->
+  <div id="search-modal" class="modal-backdrop search-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="search-modal-title" hidden>
+    <div class="modal-card search-modal-card">
+      <div class="search-modal-header">
+        <h3 id="search-modal-title" class="search-modal-title">Search The Journal</h3>
+        <button type="button" id="close-search-modal" class="modal-close-btn" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-modal-input-row">
+        <input type="search" id="modal-search-field" class="modal-search-input" placeholder="Type a concept, equation, or keyword..." aria-label="Search term">
+      </div>
+      <div class="search-modal-results" id="modal-search-results">
+        <p class="search-initial-hint">Type above to search across all published writing and categories.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EASTER EGG HUD OVERLAY (The Meaning of 夢) -->
+  <div id="easter-egg-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="easter-egg-title" hidden>
+    <div class="modal-card easter-egg-card">
+      <div class="modal-card-header">
+        <span class="egg-tag">YUME // THE BLUEPRINT</span>
+        <button type="button" id="close-easter-egg" class="modal-close-btn" aria-label="Close">&times;</button>
+      </div>
+      <div class="easter-egg-content">
+        <div class="egg-kanji" aria-hidden="true">夢</div>
+        <h3 id="easter-egg-title" class="egg-title">“WHERE DREAMS MEET THE HARDEST PROBLEMS”</h3>
+        <blockquote class="egg-quote">
+          “A dream is not an escape from reality.<br>
+          It is a blueprint waiting for mathematics.”
+        </blockquote>
+        <p class="egg-byline">— Saim Ali Abbasi, Notebook Reflections</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
